@@ -1,0 +1,36 @@
+<div class="card-container">
+  <div class="card-header">
+    <h1>Create Visitor Counter</h1>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-12 col-md-12 mb-3">
+        <button type="button" class="btn btn-outline-primary w-100" (click)="createNewSite()">
+          Get Your Visitor Counter <i class="bi bi-broadcast"></i>
+        </button>
+      </div>
+      <div class="col-md-12 col-md-12 mb-3" *ngIf="showCodeSection">
+        <div class="code-container position-relative p-3 border rounded">
+
+          <!-- Display check icon when copied -->
+          <span *ngIf="copied" class="position-absolute copied-icon">
+            <i class="bi bi-check-circle"></i>
+          </span>
+
+          <!-- Display copy button when not copied -->
+          <button *ngIf="!copied" type="button" class="btn btn-outline-primary btn-sm position-absolute border-0" (click)="copyToClipboard()" title="Copy code">
+            Copy <i class="bi bi-clipboard"></i>
+          </button>
+
+          <!-- Display the code content -->
+          <pre class="mt-4">
+            <code>
+              {{ codeToCopy }}
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

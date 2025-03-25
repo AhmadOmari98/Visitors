@@ -1,0 +1,31 @@
+/* Importing variables from the variables.css file */
+@import './variables.css';
+
+/* Container styling - similar to: shadow p-3 mb-5 rounded bg-info */
+.card-container {
+  border: 2px solid var(--primary-color); /* Border color set from primary color variable */
+  background-color: var(--background-color) !important; /* Background color set from variable */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important; /* Adding shadow with soft blur */
+  border-radius: 8px !important; /* Rounded corners */
+  padding: 16px !important; /* Padding inside the container */
+  margin-bottom: 48px !important; /* Space below the container */
+}
+
+/* Header styling - similar to: shadow-sm p-3 mb-5 bg-body rounded text-left */
+.card-header {
+  background-color: white !important; /* Header background is white */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075) !important; /* Soft shadow for the header */
+  border-radius: 8px !important; /* Rounded corners for the header */
+  padding: 16px !important; /* Padding inside the header */
+  margin-bottom: 48px !important; /* Space below the header */
+  text-align: left !important; /* Align header text to the left */
+}
+
+/* Body styling - similar to: shadow-sm p-3 mb-5 bg-body rounded */
+.card-body {
+  background-color: white !important; /* Body background is white */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075) !important; /* Soft shadow for the body */
+  border-radius: 8px !important; /* Rounded corners for the body */
+  padding: 16px !important; /* Padding inside the body */
+  margin-bottom: 48px !important; /* Space below the body */
+}
