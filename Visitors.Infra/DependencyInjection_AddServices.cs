@@ -8,7 +8,12 @@ namespace Visitors.Infra
     {
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
-            return services.AddScoped<ISiteService, SiteService>();
+            services.AddScoped<ISiteService, SiteService>();
+
+            // Add the HttpClient for IGeoService separately
+            services.AddHttpClient<IGeoService, GeoService>();
+
+            return services;
         }
     }
 }

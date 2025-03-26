@@ -6,7 +6,7 @@ namespace Visitors.Domain.IRepositories
     public interface IRepository<T> where T : DomainEntity
     {
         IQueryable<T> Query();
-        Task<T?> GetByIdAsync(int id);
+        Task<T?> GetByIdAsync(Guid id);
         Task<T?> GetByAsync(Expression<Func<T, bool>> predicate);
         Task<List<T>> ListAllAsync();
         Task<List<T>> ListAllAsync(Expression<Func<T, bool>> predicate);

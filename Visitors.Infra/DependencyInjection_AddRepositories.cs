@@ -8,7 +8,9 @@ namespace Visitors.Infra
     {
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
-            return services.AddScoped(typeof(IRepository<>), typeof(RepositoryBase<>));
+            services.AddScoped(typeof(IRepository<>), typeof(RepositoryBase<>));
+
+            return services;
         }
     }
 }

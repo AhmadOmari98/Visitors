@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { SitesService } from '../../services/sites.service';
 import { environment } from '../../../environments/environment';
-import { SpinnerloadingService } from '../../shared/services/spinnerloading.service';
+import { ControllerNames } from '../../models/controller-names';
 
 @Component({
   selector: 'app-create-visitors-counter',
@@ -23,10 +23,11 @@ export class CreateVisitorsCounterComponent implements OnInit {
   createNewSite() {
     this.sitesService.create().subscribe({
       next: (siteId) => {
-        console.log(siteId)
         if (siteId && siteId.length > 0) {
           this.codeToCopy = `<a href="${environment.ui_URL}${siteId}" target="_blank">`;
-          this.codeToCopy += `Show`
+          this.codeToCopy += `\n`
+          this.codeToCopy += `\t<img src="${environment.server_URL}${ControllerNames.Sites}/track/${siteId}"/>`
+          this.codeToCopy += `\n`
           this.codeToCopy += `</a>`
 
           this.showCodeSection = true;

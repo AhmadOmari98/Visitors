@@ -19,7 +19,7 @@ namespace Visitors.Domain.Entity
         public virtual IReadOnlyCollection<Visit> Visits => _visits.AsReadOnly();
 
         //--------------------------*
-        internal void AddVisit(Visit visit)
+        public void AddVisit(Visit visit)
         {
             _visits.Add(visit);
         }
